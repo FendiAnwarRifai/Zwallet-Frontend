@@ -71,6 +71,7 @@ npm install
 3. Add .env.local file at root folder project, and add following
 ```sh
 VUE_APP_SERVICE_API = [Backend API]
+VUE_APP_FRONTEND_URL = [Frontend Deploy]
 ```
 4. Run the project
 ```

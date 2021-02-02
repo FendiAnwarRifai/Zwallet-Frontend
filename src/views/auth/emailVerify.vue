@@ -14,7 +14,7 @@ export default {
   methods: {
     verifyEmail () {
     //   this.$route.query.id
-      axios.get(`http://localhost:8080/auth/verify/${this.$route.params.id}`)
+      axios.get(`${process.env.VUE_APP_SERVICE_API}/auth/verify/${this.$route.params.id}`)
         .then((res) => {
           this.$swal.fire({
             title: `${res.data.status}`,

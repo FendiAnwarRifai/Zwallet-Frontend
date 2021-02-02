@@ -106,7 +106,7 @@ export default {
           }
           this.UpdateUserByLogin(payloads)
 
-          axios.get(`http://localhost:8080/users/${this.receiverId}`)
+          axios.get(`${process.env.VUE_APP_SERVICE_API}/users/${this.receiverId}`)
             .then(res => {
               axios.patch(`${process.env.VUE_APP_SERVICE_API}/users/${this.receiverId}`, {
                 saldo: res.data[0].saldo + this.amount

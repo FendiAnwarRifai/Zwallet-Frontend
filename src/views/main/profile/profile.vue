@@ -107,7 +107,7 @@ export default {
       data.append('image', dataFile)
 
       // Kirim,
-      axios.patch(`http://localhost:8080/users/${this.getUserByLogin.id}`, data, { headers: { 'Content-Type': 'multipart/form-data' } })
+      axios.patch(`${process.env.VUE_APP_SERVICE_API}/users/${this.getUserByLogin.id}`, data, { headers: { 'Content-Type': 'multipart/form-data' } })
         .then(res => {
           this.$swal.fire({
             title: 'Success!',

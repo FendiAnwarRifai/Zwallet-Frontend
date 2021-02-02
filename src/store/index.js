@@ -102,7 +102,7 @@ export default new Vuex.Store({
     },
     login (context, payload) {
       return new Promise((resolve, reject) => {
-        axios.post('http://localhost:8080/auth/login/', payload)
+        axios.post(`${process.env.VUE_APP_SERVICE_API}/auth/login/`, payload)
           .then(res => {
             const result = res.data.result
             localStorage.setItem('token', result.token)
@@ -119,7 +119,7 @@ export default new Vuex.Store({
     },
     Register (context, payload) {
       return new Promise((resolve, reject) => {
-        axios.post('http://localhost:8080/users/', payload)
+        axios.post(`${process.env.VUE_APP_SERVICE_API}/users/`, payload)
           .then(res => {
             const result = res.data
             resolve(result)
@@ -137,7 +137,7 @@ export default new Vuex.Store({
     },
     UserByLogin (context, payload) {
       return new Promise((resolve, reject) => {
-        axios.get(`http://localhost:8080/users/${context.state.idUser}`)
+        axios.get(`${process.env.VUE_APP_SERVICE_API}/users/${context.state.idUser}`)
           .then(res => {
             context.commit('SET_USER_BYLOGIN', res.data[0])
             resolve(res.data[0])
@@ -208,7 +208,7 @@ export default new Vuex.Store({
     },
     DetailUser (context, payload) {
       return new Promise((resolve, reject) => {
-        axios.get(`http://localhost:8080/users/${payload}`)
+        axios.get(`${process.env.VUE_APP_SERVICE_API}/users/${payload}`)
           .then(res => {
             context.commit('SET_DETAIL_USER', res.data)
             resolve(res.data)
@@ -220,7 +220,7 @@ export default new Vuex.Store({
     },
     PhoneByLogin (context, payload) {
       return new Promise((resolve, reject) => {
-        axios.get(`http://localhost:8080/managePhone?id=${context.state.idUser}`)
+        axios.get(`${process.env.VUE_APP_SERVICE_API}/managePhone?id=${context.state.idUser}`)
           .then(res => {
             context.commit('SET_PHONE_BYLOGIN', res.data)
             resolve(res.data)
@@ -232,7 +232,7 @@ export default new Vuex.Store({
     },
     insertSecondaryPhone (context, payload) {
       return new Promise((resolve, reject) => {
-        axios.get(`http://localhost:8080/managePhone?id=${context.state.idUser}`)
+        axios.get(`${process.env.VUE_APP_SERVICE_API}/managePhone?id=${context.state.idUser}`)
           .then(res => {
             if (res.data.length >= 3) {
               Vue.swal.fire({

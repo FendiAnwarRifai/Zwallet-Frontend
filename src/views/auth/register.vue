@@ -77,7 +77,7 @@ export default {
         password: this.password,
         email: this.email,
         image: this.image,
-        link: `http://localhost:8081/emailVerify/${this.email}`
+        link: `${process.env.VUE_APP_FRONTEND_URL}/emailVerify/${this.email}`
       }
       this.Register(payload)
         .then((res) => {
