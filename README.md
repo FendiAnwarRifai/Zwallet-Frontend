@@ -7,7 +7,7 @@
 <p align="center">
   <h3 align="center">Zwallet App</h1>
   <p align="center">
-    <img align="center" width="200"  src='./screenshots/logo.PNG' />
+    <img align="center" width="200"  src='./screenshots/logo.png' />
   </p>
 
   <p align="center">
