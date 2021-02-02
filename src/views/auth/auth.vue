@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="flex-container">
-      <div class="flex-item-left">
+    <div class="row" style="margin:0;">
+      <div class="col-lg-6 left">
           <img class="vector" src="@/assets/img/vector.png" />
         <div class="row text-title">
           <div class="col">
@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="flex-item-right">
+      <div class="col-lg-6">
          <router-view />
       </div>
     </div>
@@ -44,20 +44,11 @@ export default {}
 a {
   text-decoration: none;
 }
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  height: max-content;
-}
 /*flex item left*/
-.flex-item-left {
+.left {
   overflow: hidden;
-  position: relative;
   color: white;
   background-color: #6379f4;
-  padding: 10px;
-  flex: 50%;
 }
 .text-title ,.images,.information{
     margin-left: 52px;
@@ -107,9 +98,9 @@ a {
   padding: 10px;
   flex: 50%;
 }
-@media (max-width: 800px) {
+@media (max-width: 990px) {
   /*flex item left*/
-  .flex-item-left {
+  .left {
     display: none;
   }
 }
